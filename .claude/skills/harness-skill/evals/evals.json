@@ -1,0 +1,23 @@
+{
+  "skill_name": "harness",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/harness-init\n\n请为本项目设置 Harness。",
+      "expected_output": "生成 .claude/rules/harness.md（自然语言规则）和 .claude/rules/harness_check.py（验证脚本），并在 CLAUDE.md 中追加引用。harness_check.py 可通过 python .claude/rules/harness_check.py --help 查看用法。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "/harness-update\n\n刚才生成的 TypeScript 代码运行后出现了类型错误。\n\nError: Type 'string' is not assignable to type 'number'.\n  at src/utils/calculate.ts:23:5\n\n请更新约束以防止此类错误。",
+      "expected_output": ".claude/rules/harness.md 的规则被更新，新增了类型安全性相关的具体规则（如：函数返回值类型须显式声明、避免隐式 any 类型等）。harness_check.py 也被更新，包含 TypeScript 类型检查命令。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "请为这个 Python 项目添加一个数据处理函数。读取 CSV 文件并进行聚合统计。\n\n（假设 Harness 已配置完成，pytest 和 ruff 已设置）",
+      "expected_output": "代码生成时参照 .claude/rules/harness.md 的规则，遵循项目的命名规范、类型注解和测试要求。生成后展示通过 python .claude/rules/harness_check.py 验证的流程。",
+      "files": []
+    }
+  ]
+}
